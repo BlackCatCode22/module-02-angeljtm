@@ -2,29 +2,19 @@ import java.util.Scanner;
 
 public class ReversedStrings {
     public static void main(String[] args) {
-
-        System.out.println("Welcome to My Strings program");
-
-        // Create a Scanner object to get a string from the user.
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\n Please enter a string of characters...\n");
-        String userInput = scanner.nextLine();
 
-        // Output the line to reverse.
-        System.out.println("\n\nThe string to reverse is: " + userInput + "\n\n");
+        System.out.print("Enter a sentence and watch it become reversed: ");
+        String userInput = scanner.nextLine();    //gets sentence that wants to be reversed
+        System.out.print('\n');
 
-        // Strings are a data structure meaning we can access individual characters like this
-        char aCharFromAString = userInput.charAt(3);
+        String reversed = "";  //create string for the new sentence that will be created
 
-        System.out.println("\n\n aCharFromAString is " + aCharFromAString);
-
-        String reversedString = "";
-        for (int i = 0; i < userInput.length(); i++) {
-            System.out.println("\n  " + userInput.charAt(i) );
-            reversedString = userInput.charAt(i) + reversedString;
+        for(int i = userInput.length()-1; i >= 0; i--){   //start at the end of userInput, work towards the beginning adding each character into new String
+            reversed += userInput.charAt(i);
         }
 
-        System.out.println("\n reversed Str = " + reversedString);
-
+        System.out.print("The sentece in reverse is: ");
+        System.out.print(reversed+ '\n');
     }
 }
